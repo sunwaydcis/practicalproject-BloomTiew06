@@ -5,7 +5,7 @@ ThisBuild / scalaVersion := "3.3.4"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "introtosclafx",
+    name := "AddressApp",
     libraryDependencies ++= {
       // Determine OS version of JavaFX binaries
       val osName = System.getProperty("os.name") match {
@@ -21,6 +21,9 @@ lazy val root = (project in file("."))
     },
     libraryDependencies ++= Seq("org.scalafx" %% "scalafx" % "21.0.0-R32")
   )
+
+Compile / mainClass := Some("ch.makery.address.MainApp")
+
 //enable for sbt-assembly
 //assembly / assemblyMergeStrategy := {
 //  case PathList("META-INF", xs @ _*) => MergeStrategy.discard // Discard all META-INF files
